@@ -7,8 +7,8 @@ import { BudgetGateway } from '../domain/models/Budget/gateway/budget.gateway';
 @Injectable({
   providedIn: 'root'
 })
-
 export class GetBudgetUseCases {
+
   constructor( private _budgetGateWay: BudgetGateway) {}  
   getBudgetById (id: String) : Observable <Budget> {
     return this._budgetGateWay.getByID(id);
