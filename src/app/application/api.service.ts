@@ -8,11 +8,9 @@ import { BudgetGateway } from '../domain/models/Budget/gateway/budget.gateway';
   providedIn: 'root'
 })
 
-export class GetAlbumUseCases {
+export class GetBudgetUseCases {
   constructor( private _budgetGateWay: BudgetGateway) {}  
   getBudgetById (id: String) : Observable <Budget> {
-    //TODO: En este sitio podríamos manejar las configuraciones 
-    //en cache
     return this._budgetGateWay.getByID(id);
   }
   getAllBudget() : Observable <Array<Budget>> {

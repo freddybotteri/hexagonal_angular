@@ -13,8 +13,9 @@ export  class BudgetApiRestService extends BudgetGateway {
   private _url = 'https://jsonplaceholder.typicode.com/albums/';
 
   constructor(private http: HttpClient) {super();}
+
   getByID(id: String): Observable<Budget> {
-    return this.http.get<Budget>(this._url+id).pipe(delay(2000));
+    return this.http.get<Budget>(this._url+id);
   }
   getAll(): Observable<Budget[]> {
     return this.http.get<Array<Budget>>(this._url);
